@@ -5,7 +5,7 @@ pipeline {
     }
     environment {
         WAR_NAME = "sample.war"
-        TOMCAT_DEPLOY_DIR = "C:\\tomcat9\\webapps"
+        TOMCAT_DEPLOY_DIR = "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps"
         TOMCAT_PORT = "8081"  // ← Using port 8081 for Tomcat
     }
     stages {
