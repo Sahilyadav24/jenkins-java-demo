@@ -31,8 +31,11 @@ pipeline {
         }
         stage('Smoke Test') {
             steps {
-                bat 'timeout /t 10 /nobreak'  // Wait 10 seconds
-                bat 'curl http://localhost:8081/sample/hello'  // ← Using port 8081
+                bat '''
+                    echo Waiting for deployment to complete...
+                    timeout /t 10 /nobreak > nul
+                    curl http://localhost:8081/sample/hello
+                '''
             }
         }
     }
